@@ -1,4 +1,19 @@
-import myCurrentLocation, { getGreeting, message, name } from "./myModule";
+import { GraphQLServer } from "graphql-yoga";
 
-console.log(message, name, myCurrentLocation);
-console.log(getGreeting('Jessica'));
+const typeDefs = `
+    type Query {
+        hello: String
+    }
+`;
+
+const resolvers = {
+  Query: {
+    hello() {
+      return "This is my first query!";
+    }
+  }
+};
+
+const server = new GraphQLServer(
+
+)
